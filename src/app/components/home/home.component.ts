@@ -48,13 +48,17 @@ export class HomeComponent implements OnInit {
     this.loading = true;
     this.searchService.getMovieByTitle(title, currentPage).subscribe(
       (data) => {
+        console.log('data', data);
         this.ListOfMovies = data;
         this.totalItems = data.totalResults / 10;
+        console.log('total LIst', this.ListOfMovies);
+        console.log('total items', this.totalItems);
         if (this.ListOfMovies && this.ListOfMovies.Search !== undefined) {
           this.loading = false;
           this.indicator = true;
           this.name = this.searchMovie.value;
           this.flag = -1;
+          console.log(this.loading, this.indicator, this.name, this.flag);
         }
 
         this.error = this.errorMessage(this.ListOfMovies);
@@ -64,40 +68,12 @@ export class HomeComponent implements OnInit {
       }
     );
   }
-  // fetchMovieById() {
-  //   for (let movie of this.ListOfMovies.Search) {
-  //     this.searchService.getSearchMovieByID(movie.imdbID).subscribe((data) => {
-  //       this.listByID = data;
-  //       console.log('dsf', this.listByID.imdbRating);
-  //     });
-  //   }
-  // }
-  // fetchMovieById1(id: any, title: string, currentPage: number) {
-  //   // this.searchService.getMovieByTitle(title,currentPage).subscribew
-  //   for (let movie of this.ListOfMovies.Search) {
-  //     this.searchService.getSearchMovieByID(movie.imdbID).subscribe((data) => {
-  //       this.ratingList = data;
-  //       console.log('dsf', this.ratingList.imdbRating);
-  // for (let i = 0; i < this.ratingList; i++) {
-  //   for (let j = i + 1; j < this.ratingList; i++) {
-  //     if (this.ratingList.imdbRating[i] > this.ratingList.imdbRating[j]) {
-  //       let temp = this.ratingList.imdbRating[i];
-  //       this.ratingList.imdbRating[i] = this.ratingList.imdbRating[j];
-  //       this.ratingList.imdbRating[j] = temp;
-  //       console.log(temp);
-  //     }
-  //   }
-  // }
-  // for (let item = 0; item < this.ratingList; item++) {
-  //   console.log(this.ratingList.imdbRating);
-  // }
-  //     });
-  //   }
-  // }
+
   onCancel() {
     this.loading = false;
     this.indicator = false;
     this.flag = -1;
+    console.log(this.loading, this.indicator, this.name, this.flag);
   }
   errorMessage(list: any) {
     if (list.Error === 'Too many results.') {

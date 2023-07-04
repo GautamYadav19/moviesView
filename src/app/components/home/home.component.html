@@ -17,7 +17,7 @@
           class="navbar-brand"
           >IIT</a
         >
-        <form class="d-flex input-group w-auto">
+        <span class="d-flex input-group w-auto">
           <input
             [formControl]="searchMovie"
             type="search"
@@ -34,7 +34,7 @@
           >
             <i class="fas fa-search"></i>
           </span>
-        </form>
+        </span>
       </div>
     </nav>
     <!-- nav -->
@@ -80,7 +80,6 @@
   </div>
   <!-- custom parameters -->
   <app-initial-home [movies]="ListOfMovies"></app-initial-home>
-  <!-- <app-card-view></app-card-view> -->
   <!--  -->
   <app-card-view
     *ngIf="indicator && searchMovie.value.length && !(flag === 0 || flag === 1)"
