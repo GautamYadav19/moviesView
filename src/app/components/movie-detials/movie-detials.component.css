@@ -1,0 +1,29 @@
+
+a{
+  color: aliceblue;
+  text-decoration: none;
+}
+a:hover{
+  color: aliceblue;
+}
+p{
+  font-weight: 400;
+  padding: 0;
+  margin-left: 5px;
+}
+@media only screen and (max-width:1550px) {
+  /* For tablets: */
+  img {
+    width: 200%;
+    padding: 0;
+  }
+
+
+}
+@media only screen and (max-width:500px) {
+  img {
+    width: 100%;
+    padding: 5px;
+  }
+
+}

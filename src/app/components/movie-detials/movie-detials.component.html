@@ -1,0 +1,54 @@
+<div class="container-fluid lead">
+  <div class="row">
+    <nav class="navbar navbar-light bg-dark">
+      <div class="container-fluid">
+        <a
+          style="
+            text-decoration: none;
+            background-color: aliceblue;
+            border-radius: 50%;
+            color: black;
+            font-size: larger;
+            width: 50px;
+            text-align: center;
+            font-weight: bold;
+          "
+          class="navbar-brand"
+          >IIT</a
+        >
+        <Span class="d-flex justify-content-evenly input-group w-auto">
+          <span
+            class="btn btn-secondary mr-5"
+            style="color: aliceblue; margin-right: 50%"
+            routerLink="/"
+            >Back</span
+          >
+        </Span>
+      </div>
+    </nav>
+  </div>
+  <hr />
+  <div style="" class="row d-flex justify-content-start mt-5 mb-5">
+    <div class="col-md-4">
+      <img
+        class="img-fluid"
+        style="height: 55vh"
+        src="{{ singlemovie.Poster }}"
+      />
+    </div>
+    <div class="col-lg-4 col-md-5">
+      <h5>
+        {{ singlemovie.Title }}
+        <span style="margin-left: 10%">{{ singlemovie.Year }}</span>
+      </h5>
+      <p>{{ singlemovie.imdbRating }} - Rating</p>
+      <p>{{ singlemovie.Genre }}</p>
+      <p>{{ singlemovie.Actors }} Director {{ singlemovie.Director }}</p>
+      <P>Released on {{ singlemovie.Released }}</P>
+      <p>Writer : {{ singlemovie.Writer }}</p>
+      <p>{{ singlemovie.Plot }}</p>
+      <p></p>
+    </div>
+  </div>
+  <hr />
+</div>

@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row d-flex justify-content-evenly">
+    <div
+      *ngFor="
+        let movie of movies.Search
+          | paginate
+            : {
+                itemsPerPage: itemsPerPage,
+                currentPage: currentPage,
+                totalItems: totalItems
+              }
+      "
+      class="mt-5"
+      style="width: 250px"
+    >
+      <span [routerLink]="'/details/' + movie.imdbID">
+        <img
+          style="height: fit-content; width: 100vw; height: 275px"
+          src="{{ movie.Poster }}"
+          alt="{{ movie.Title }}"
+          class="img-fluid"
+          style="width: 250px; height: 275px"
+        />
+        <p>{{ movie.Title }}</p>
+      </span>
+    </div>
+  </div>
+</div>
