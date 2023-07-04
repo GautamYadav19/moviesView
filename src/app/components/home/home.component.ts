@@ -48,17 +48,13 @@ export class HomeComponent implements OnInit {
     this.loading = true;
     this.searchService.getMovieByTitle(title, currentPage).subscribe(
       (data) => {
-        console.log('data', data);
         this.ListOfMovies = data;
         this.totalItems = data.totalResults / 10;
-        console.log('total LIst', this.ListOfMovies);
-        console.log('total items', this.totalItems);
         if (this.ListOfMovies && this.ListOfMovies.Search !== undefined) {
           this.loading = false;
           this.indicator = true;
           this.name = this.searchMovie.value;
           this.flag = -1;
-          console.log(this.loading, this.indicator, this.name, this.flag);
         }
 
         this.error = this.errorMessage(this.ListOfMovies);
@@ -73,7 +69,6 @@ export class HomeComponent implements OnInit {
     this.loading = false;
     this.indicator = false;
     this.flag = -1;
-    console.log(this.loading, this.indicator, this.name, this.flag);
   }
   errorMessage(list: any) {
     if (list.Error === 'Too many results.') {
