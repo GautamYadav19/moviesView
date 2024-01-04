@@ -8,6 +8,8 @@ import { ServiceService } from 'src/app/cors/service.service';
   styleUrls: ['./movie-detials.component.css'],
 })
 export class MovieDetialsComponent implements OnInit {
+  loading: boolean = true;
+  
   constructor(
     private apiService: ServiceService,
     private actRoute: ActivatedRoute
@@ -20,6 +22,7 @@ export class MovieDetialsComponent implements OnInit {
   getMovieByID(id: any) {
     this.apiService.getSearchMovieByID(id).subscribe((data) => {
       this.singlemovie = data;
+      this.loading = false;
     });
   }
 }

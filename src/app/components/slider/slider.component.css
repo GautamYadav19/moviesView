@@ -1,0 +1,30 @@
+
+.gallery{
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+  overflow-x: scroll;
+  scroll-snap-align: x mandatory;
+  width: 500px;
+  position: relative;
+  left: 530px;
+  /* overflow-y: hidden; */
+
+  }
+
+  .gallery__item{
+    scroll-snap-align: center;
+    min-width: 25%;
+    overflow-y: hidden;
+    /* overflow-x: hidden; */
+  }
+  .gallery__image{
+    width: 250px;
+    height: 300px;
+    object-fit: cover;
+    transition: scale 800ms;
+  }
+.gallery__image:hover{
+  scale: 125%;
+}

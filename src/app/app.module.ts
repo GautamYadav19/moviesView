@@ -11,6 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MovieDetialsComponent } from './components/movie-detials/movie-detials.component';
 import { InitialHomeComponent } from './components/initial-home/initial-home.component';
 import { RouterModule } from '@angular/router';
+import { SliderComponent } from './components/slider/slider.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { RouterModule } from '@angular/router';
     CardViewComponent,
     MovieDetialsComponent,
     InitialHomeComponent,
+    SliderComponent,
   ],
   imports: [
     BrowserModule,

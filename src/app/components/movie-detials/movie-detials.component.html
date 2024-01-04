@@ -1,3 +1,4 @@
+
 <div class="container-fluid lead">
   <div class="row">
     <nav class="navbar navbar-light bg-dark">
@@ -6,15 +7,16 @@
           style="
             text-decoration: none;
             background-color: aliceblue;
-            border-radius: 50%;
+            border-radius: 5%;
             color: black;
             font-size: larger;
-            width: 50px;
+            width: 100;
             text-align: center;
             font-weight: bold;
+            padding: 5px;
           "
           class="navbar-brand"
-          >IIT</a
+          >MOVIES</a
         >
         <Span class="d-flex justify-content-evenly input-group w-auto">
           <span
@@ -28,7 +30,23 @@
     </nav>
   </div>
   <hr />
-  <div class="row d-flex justify-content-start mt-5 mb-5">
+
+  <div
+  *ngIf="loading"
+  class="d-flex justify-content-center mt-5"
+>
+  <div class="spinner-grow text-secondary mt-5 ml-3" role="status">
+    <span class="sr-only"></span>
+  </div>
+  <div class="spinner-grow text-secondary mt-5 ml-3" role="status">
+    <span class="sr-only"></span>
+  </div>
+  <div class="spinner-grow text-secondary mt-5 ml-3" role="status">
+    <span class="sr-only"></span>
+  </div>
+</div>
+
+  <div *ngIf="!loading" class="row d-flex justify-content-start mt-5 mb-5">
     <div class="col-md-4">
       <img
         class="img-fluid"
